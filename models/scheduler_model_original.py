@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
+# Import logger
+# -*- coding: utf-8 -*-
 from odoo import models, fields, api
-from datetime import datetime, date, timedelta
+# Import logger
 import logging
 
-
+# Get the logger
 _logger = logging.getLogger(__name__)
+
+# External import
+from datetime import datetime, date, timedelta
 
 
 class scheduler_demo(models.Model):
@@ -19,7 +24,7 @@ class scheduler_demo(models.Model):
     # This function is called when the scheduler goes off
     def process_demo_scheduler_queue(self):
 
-        # scheduler_line_obj = self.pool.get('scheduler.demo')  
+        # scheduler_line_obj = self.pool.get('scheduler.demo')
         scheduler_line_obj = self.env['scheduler.demo']
 
         # scheduler_line_ids = self.pool.get('scheduler.demo').search(cr, uid, [])
