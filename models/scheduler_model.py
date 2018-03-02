@@ -36,8 +36,8 @@ class scheduler_demo(models.Model):
             numberOfUpdates = scheduler_line.numberOfUpdates
 
             aux = datetime.strptime(scheduler_line.lastModified, '%Y-%m-%d')
-            resta = aux.date() - datetime.now().date()
-            if (resta.days >= -2 and resta.days <= 0):
+            rest = aux.date() - datetime.now().date()
+            if (rest.days >= -2 and rest.days <= 0):
                 print ("Hola")
             _logger.info('line: ' + scheduler_line.name)
             _logger.info('numberOfUpdates: ' + str(scheduler_line.numberOfUpdates))
