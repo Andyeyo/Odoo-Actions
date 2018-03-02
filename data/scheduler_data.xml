@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ir_cron_scheduler_demo_action" model="ir.cron"><!--ID y model ir.con(Automated)-->
+            <field name="name">Demo scheduler</field><!--Name to show-->
+            <field name="user_id" ref="base.user_root"/><!--Responsible User (many times root)-->
+            <field name="interval_number">2</field><!--Must be a number(how often the automated action should run)-->
+            <field name="interval_type">minutes</field><!--It is a selection field(minutes, hours, etc.)-->
+            <field name="numbercall">-1</field><!--show how often this automated action should be run (-1 run forever)-->
+            <field eval="False" name="doall"/><!--False -> Execute the missed actions, otherwise True (Only True or False)-->
+            <field eval="'scheduler.demo'" name="model"/><!--What model is the action-->
+            <field eval="'process_demo_scheduler_queue'" name="function"/><!--Name of the function-->
+        </record>
+   </data>
+</odoo>
